@@ -38,7 +38,7 @@
 	"Pelicula.h"
 	"Sala.h"
 
-1752263614 c:\users\pablo\onedrive\escritorio\tp para la defensa\administrador salas de cine\sala.h
+1752349692 c:\users\pablo\onedrive\escritorio\tp para la defensa\administrador salas de cine\sala.h
 	"Constante.h"
 	"Fecha.h"
 	<string>
@@ -71,7 +71,7 @@
 	"ArchivoPelicula.h"
 	"ArchivoSala.h"
 
-1752327339 source:c:\users\pablo\onedrive\escritorio\tp para la defensa\administrador salas de cine\main.cpp
+1752328203 source:c:\users\pablo\onedrive\escritorio\tp para la defensa\administrador salas de cine\main.cpp
 	<iostream>
 	<cstring>
 	"Menu.h"
@@ -88,7 +88,7 @@
 	"ArchivoPelicula.h"
 	<string>
 
-1752269535 c:\users\pablo\onedrive\escritorio\tp para la defensa\administrador salas de cine\managersalas.h
+1752349692 c:\users\pablo\onedrive\escritorio\tp para la defensa\administrador salas de cine\managersalas.h
 	"Sala.h"
 	"ArchivoSala.h"
 
@@ -101,7 +101,7 @@
 	"ArchivoRespaldo.h"
 	"ArchivoSala.h"
 
-1751035567 source:c:\users\pablo\onedrive\escritorio\tp para la defensa\administrador salas de cine\managerentrada.cpp
+1752345302 source:c:\users\pablo\onedrive\escritorio\tp para la defensa\administrador salas de cine\managerentrada.cpp
 	<iostream>
 	"ManagerEntrada.h"
 	"ManagerPeliculas.h"
@@ -118,13 +118,13 @@
 	<iostream>
 	"ManagerRespaldo.h"
 
-1752269612 source:c:\users\pablo\onedrive\escritorio\tp para la defensa\administrador salas de cine\managersalas.cpp
+1752349692 source:c:\users\pablo\onedrive\escritorio\tp para la defensa\administrador salas de cine\managersalas.cpp
 	<iostream>
 	"Constante.h"
 	"ManagerSalas.h"
 	<cstring>
 
-1752074841 source:c:\users\pablo\onedrive\escritorio\tp para la defensa\administrador salas de cine\menu.cpp
+1752347129 source:c:\users\pablo\onedrive\escritorio\tp para la defensa\administrador salas de cine\menu.cpp
 	<iostream>
 	"Menu.h"
 
@@ -134,7 +134,7 @@
 	"Pelicula.h"
 	"ArchivoPelicula.h"
 
-1752269653 source:c:\users\pablo\onedrive\escritorio\tp para la defensa\administrador salas de cine\sala.cpp
+1752349692 source:c:\users\pablo\onedrive\escritorio\tp para la defensa\administrador salas de cine\sala.cpp
 	<iostream>
 	"Sala.h"
 	"Constante.h"

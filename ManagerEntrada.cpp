@@ -152,7 +152,7 @@ void ManagerEntrada::cargarEntrada()
         while(banderaDeCarga&&!banderaDeError)
         {
             // for contidad entradas compradas
-            managerButacas.mostrarSalaPorNumero(numeroDeSala);///tiene valor por defecto
+           /// managerButacas.mostrarSalaPorNumero(numeroDeSala);///tiene valor por defecto/// ELIMINE EL VALOR POR DEFECTO
             cout<< "ELIJA LA FILA QUE DESEA COMPRAR"<<endl;
             cin>> fila;
             cout<< "INGRESE LA BUTACA QUE DESEA COMPRAR (entre 1 y 10)"<<endl;

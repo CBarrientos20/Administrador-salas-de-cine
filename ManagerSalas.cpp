@@ -4,8 +4,12 @@ using namespace std;
 #include "ManagerSalas.h"
 #include <cstring>
 
+void ManagerSalas::pausarYLimpiar() {
+    system("pause");
+    system("cls");
+}
 /// resuelve la opcion 1 del menu
-void ManagerSalas::CargarSala()
+void ManagerSalas::cargarSala()
 {
     Sala registro;
     if(registro.cargarSala())
@@ -23,62 +27,57 @@ void ManagerSalas::CargarSala()
     {
         cout<< "NO SE PUDO CARGAR LA SALA CORRECTAMENTE"<<endl;
     }
+    pausarYLimpiar();
+}
+/// Método auxiliar para leer todas las salas
+Sala* ManagerSalas::leerTodasLasSalas(int &cantidad) {
+    cantidad = _archivoSalas.getCantidadSalas();
 
-    system("pause");
-    system("cls");
+    if (cantidad <= 0) {
+        return nullptr;
+    }
 
+    Sala* vecSala = new Sala[cantidad];
+    if (!vecSala) {
+        cout << "No se pudo reservar memoria para las salas." << endl;
+        cantidad = 0;
+        return nullptr;
+    }
+
+    if (!_archivoSalas.leerTodas(vecSala, cantidad)) {
+        delete[] vecSala;
+        cantidad = 0;
+        return nullptr;
+    }
+
+    return vecSala;
 }
 /// resuelve la opcion 2 del menu
-void ManagerSalas::MostrarSalas()
+void ManagerSalas::mostrarSalas()
 {
     int cantidadDeSalas;
-    Sala *vecSala;
-    cantidadDeSalas=_archivoSalas.getCantidadSalas();
-    vecSala=new Sala[cantidadDeSalas];
-    if (vecSala == nullptr)
+    Sala *vecSala=leerTodasLasSalas(cantidadDeSalas);
+    if (!vecSala)return;
+
+    for(int i=0; i <cantidadDeSalas; i++)
     {
-        cout << "No se pudo reservar memoria para las salas." << endl;
-        return;
-    }/// se valido la optencion de memoria
-    if(_archivoSalas.leerTodas(vecSala,cantidadDeSalas))
-    {
-        for(int i=0; i <cantidadDeSalas; i++)
-        {
-            vecSala[i].mostrarSala();
-        }
-    }
-    else
-    {
-        cout << "NO SE PUDIERON LEER LAS SALAS" << endl;
-        system("pause");
-        system("cls");
+        vecSala[i].mostrarSalaNumeroNombreYFecha();
     }
     delete[] vecSala;
+    ///pausarYLimpiar();MOLESTA CUANDO LA LLAMAMOS DE OTRA FUNCIONES
 }
-
-/// ayuda en la resolucion de la opcion 2 del menu y a la funcion que muestra la sala que se quiere comprar la entrada
-
 //// resolvemos la opcion 3 del menu; y retorna la posicion esta funcion la usamos para ayudar a resolver la opcion 4 y 5 del menu
-int ManagerSalas::buscarPosicionSalaPorNumero(int numeroSala)/// TAL VEZ CON PARAMETROS POR DEFECTO PODRIA REUTILIZAR ESTA FUNCION
+int ManagerSalas::buscarPosicionSalaPorNumero()/// TAL VEZ CON PARAMETROS POR DEFECTO PODRIA REUTILIZAR ESTA FUNCION
 {
-
     int posicion=-1;
     int cantidadDeSalas;
-    Sala *vecSala;
+    Sala *vecSala=leerTodasLasSalas(cantidadDeSalas);
+    if (!vecSala)return -1;
 
-    if(numeroSala==0)
-    {
-        cout<< "INGRESE EL NUMERO DE SALA QUE DESEA BUSCAR: "<<endl;
-        cin>>numeroSala;
-    }
-    cantidadDeSalas=_archivoSalas.getCantidadSalas();
-    vecSala=new Sala[cantidadDeSalas];
-    if (vecSala == nullptr)
-    {
-        cout << "No se pudo reservar memoria para las salas." << endl;
-        return -1;
-    }/// se valido la optencion de memoria
-    _archivoSalas.leerTodas(vecSala,cantidadDeSalas);
+    int numeroSala;
+    cout << "------------------------------------------" << endl;
+    cout<< "INGRESE EL NUMERO DE SALA QUE DESEA BUSCAR: "<<endl;
+    cin>>numeroSala;
 
     for(int i=0; i<cantidadDeSalas; i++)
     {
@@ -90,12 +89,35 @@ int ManagerSalas::buscarPosicionSalaPorNumero(int numeroSala)/// TAL VEZ CON PAR
         }
     }
     delete[] vecSala;
+    cout<< "ESE NUMERO DE SALA NO EXISTE"<<endl;
     return posicion;
 }
+///OPCION 3 DEL MENU
+void ManagerSalas::mostrarSalaPorNumero(){
+    Sala registro;
+    mostrarSalas();
+    int pos=buscarPosicionSalaPorNumero();
+    if(pos!=-1){
+        _archivoSalas.leerSala(registro,pos);
+        registro.mostrarSala();/// APROVECHAMOS PARA USAR EL MOSTRAR COMPLETO PORQUE ES UNA SOLA
+    }
+}
 
+void ManagerSalas::mostrarSalasEstadoNYF(){
+    int cantidadDeSalas;
+    Sala *vecSala=leerTodasLasSalas(cantidadDeSalas);
+    if (!vecSala)return;
+
+    for(int i=0; i <cantidadDeSalas; i++)
+    {
+        vecSala[i].mostrarSalaNumeroEstadoYFecha();
+    }
+    delete[] vecSala;
+}
 ///OPCION 4 DEL MENU DE SALAS
 void ManagerSalas::bajaPorMantenimiento()
 {
+    mostrarSalasEstadoNYF();
     int posicion;
     Sala registro;
     posicion=buscarPosicionSalaPorNumero();
@@ -118,6 +140,7 @@ void ManagerSalas::bajaPorMantenimiento()
 ///OPCION 5 DEL MENU DE SALAS
 void ManagerSalas::altaPostMantenimiento()
 {
+    mostrarSalasEstadoNYF();
     int posicion;
     Sala registro;
     posicion=buscarPosicionSalaPorNumero();
@@ -138,40 +161,31 @@ void ManagerSalas::altaPostMantenimiento()
 }
 
 /// OPCION 6 DEL MENU DE SALAS
-void ManagerSalas::MostrarSalasActivas()
+void ManagerSalas::mostrarSalasPorFecha()
 {
-
+    mostrarSalas();
+    Fecha fechaAsignada;
     int cantidadDeSalas;
     Sala *vecSala;
-    cantidadDeSalas=_archivoSalas.getCantidadSalas();
-    vecSala=new Sala[cantidadDeSalas];
-    if (vecSala == nullptr)
+    vecSala= leerTodasLasSalas(cantidadDeSalas);
+    if (!vecSala)return;
+    fechaAsignada.cargarFecha();
+    bool banderaSala=true;
+    for(int i=0; i <cantidadDeSalas; i++)
     {
-        cout << "No se pudo reservar memoria para las salas." << endl;
-        return;
-    }/// se valido la optencion de memoria
-    if(_archivoSalas.leerTodas(vecSala,cantidadDeSalas))
-    {
-        for(int i=0; i <cantidadDeSalas; i++)
+        if(vecSala[i].getFechaAsignada()==fechaAsignada)
         {
-            if(vecSala[i].getEstadoSala())
-            {
-                vecSala[i].mostrarSala();
-            }
+            vecSala[i].mostrarSala();
+            banderaSala=false;
         }
     }
-    else
-    {
-        cout << "No se pudieron leer las salas" << endl;
-    }
-
+    if(banderaSala)cout<<"NO HAY SALAS PARA ESA FECHA"<<endl;
     delete[] vecSala;
-    system("pause");
-    system("cls");
+    pausarYLimpiar();
 }
 
 /// ESTA FUNCIONA LA USAMOS EN LA COMPRA DE ENTRADAS
-void ManagerSalas::mostrarSalaPorNumero(int numeroSala)/// podria enviar un false si la sala no la encuentra de ser necesario
+/*void ManagerSalas::mostrarSalaPorNumero(int numeroSala)/// podria enviar un false si la sala no la encuentra de ser necesario
 {
     int posicion;
     Sala registro;
@@ -181,13 +195,14 @@ void ManagerSalas::mostrarSalaPorNumero(int numeroSala)/// podria enviar un fals
 
     registro.mostrarSala();
 
-}
+}*////QUEDO EN DESUSO POR AHORA
+
 /// ESTA FUNCIONA LA USAMOS EN LA COMPRA DE ENTRADAS
 void ManagerSalas::mostrarSalaConNumero(int numeroSala,int &contadorDeSalasFueraDeServicio)/// podria enviar un false si la sala no la encuentra de ser necesario
 {
     int posicion;
     Sala registro;
-    posicion=buscarPosicionSalaPorNumero(numeroSala);
+    posicion=buscarPosicionSalaPorNumero();/// SE BORRO EL PARAMETRO NUMERO DE SALA
 
     _archivoSalas.leerSala(registro,posicion);/// mandamos la referencia
 
@@ -208,7 +223,7 @@ bool ManagerSalas::validaEstadoSala(int numeroSala)/// podria enviar un false si
 {
     int posicion;
     Sala registro;
-    posicion=buscarPosicionSalaPorNumero(numeroSala);
+    posicion=buscarPosicionSalaPorNumero();///SE BORRO EL PARAMETRO NUMERO DE SALA
 
     _archivoSalas.leerSala(registro,posicion);/// mandamos la referencia
     return registro.getEstadoSala();/// esta funcion retorna un booleano
@@ -219,7 +234,7 @@ bool ManagerSalas::comprarButaca(int numeroSala,int fila,int butaca)  ///cambie 
 {
     Sala reg;
     int posicion;
-    posicion=buscarPosicionSalaPorNumero(numeroSala);
+    posicion=buscarPosicionSalaPorNumero();/// SE BORRO EL PARAMETRO NUMERO DE SALA
 
     if(_archivoSalas.ocuparButaca(reg,posicion,fila,butaca))
     {

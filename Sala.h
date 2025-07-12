@@ -14,6 +14,8 @@ public:
 
     bool cargarSala();
     void mostrarSala();
+    void mostrarSalaNumeroNombreYFecha();
+    void mostrarSalaNumeroEstadoYFecha();
 
     int getnumero();
     string getnombre();

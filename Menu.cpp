@@ -112,7 +112,7 @@ void Menu::menuSalas()
         cout<<"OPCION 3.- BUSCAR SALA POR NUMERO"<<endl;
         cout<<"OPCION 4.- BAJA DE SALA POR MANTENIMIENTO"<<endl;
         cout<<"OPCION 5.- ALTA DE SALA POST MANTENIMIENTO"<<endl;
-        cout<<"OPCION 6.- MOSTRAR SALAS ACTIVAS"<<endl;
+        cout<<"OPCION 6.- MOSTRAR SALAS POR FECHA"<<endl;
         cout<<"OPCION 0.- VOLVER AL MENU PRINCIPAL"<<endl;
         cin>>_opcionSala;
 
@@ -120,24 +120,15 @@ void Menu::menuSalas()
         switch(_opcionSala)
         {
         case 1:
-            _ManagerSalas.CargarSala();
+            _ManagerSalas.cargarSala();
             break;
         case 2:
-            _ManagerSalas.MostrarSalas();
+            _ManagerSalas.mostrarSalas();
             system("pause");
             system("cls");
             break;
         case 3:
-            if(_ManagerSalas.buscarPosicionSalaPorNumero()!=-1)
-            {
-                cout<< "LA SALA EXISTE"<<endl;
-            }
-            else
-            {
-                cout<< "LA SALA NO EXISTE"<<endl;
-            }
-            system("pause");
-            system("cls");
+            _ManagerSalas.mostrarSalaPorNumero();
             break;
         case 4:
             _ManagerSalas.bajaPorMantenimiento();
@@ -146,7 +137,7 @@ void Menu::menuSalas()
             _ManagerSalas.altaPostMantenimiento();
             break;
         case 6:
-            _ManagerSalas.MostrarSalasActivas();
+            _ManagerSalas.mostrarSalasPorFecha();
             break;
         case 0:
             cout<<"SALISTE DE LA SECCION SALAS"<<endl;

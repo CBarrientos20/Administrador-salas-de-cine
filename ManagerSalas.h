@@ -5,17 +5,21 @@
 
 class ManagerSalas{
 public:
-   void CargarSala();
-   void MostrarSalas();
-   int buscarPosicionSalaPorNumero(int numeroSala=0);
-   void bajaPorMantenimiento();
-   void altaPostMantenimiento();
-   void MostrarSalasActivas();
-   void mostrarSalaPorNumero(int numeroSala);
    void mostrarSalaConNumero(int numeroSala,int& contadorDeSalasFueraDeServicio);
    bool validaEstadoSala(int numeroSala);
    bool comprarButaca(int numeroSala,int fila,int butaca); ///cambie de void a bool para el while de manager entradas
    int cantidadDeSalas();
+   /// despues de la refactorizacion
+    void pausarYLimpiar();
+    void cargarSala();
+    Sala* leerTodasLasSalas(int &cantidad);
+    void mostrarSalas();
+    int buscarPosicionSalaPorNumero();
+    void mostrarSalaPorNumero();
+    void mostrarSalasPorFecha();
+    void mostrarSalasEstadoNYF();
+    void bajaPorMantenimiento();
+    void altaPostMantenimiento();
 private:
     ArchivoSala _archivoSalas;
 

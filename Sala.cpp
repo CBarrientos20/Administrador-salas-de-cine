@@ -125,15 +125,9 @@ void Sala::mostrarSala(){
     cout<< "EL NOMBRE DE LA SALA ES: "<< getnombre()<<endl;
     cout<< "LA SALA ES :"<< gettipo()<<endl;
     getFechaAsignada().mostrarFecha();
+    if(getEstadoSala())cout<< "LA SALA ESTA ACTIVA"<<endl;
+    if(!getEstadoSala())cout<< "LA SALA ESTA EN MANTENIMIENTO"<<endl;
 
-    if(getEstadoSala())
-    {
-        cout<< "LA SALA ESTA ACTIVA"<<endl;
-    }
-    else
-    {
-        cout<< "LA SALA ESTA EN MANTENIMIENTO"<<endl;
-    }
     for(int i=0; i<FILAS; i++)
     {
         cout<<"FILA: "<<i+1<<" :";
@@ -151,6 +145,18 @@ void Sala::mostrarSala(){
         cout<<endl;
     }
     cout<< "---------------------------"<<endl;
+}
+
+void Sala::mostrarSalaNumeroNombreYFecha(){
+    cout<< "SALA #: "<<getnumero()<<endl;
+    cout<< "EL NOMBRE DE LA SALA ES: "<< getnombre()<<endl;
+    getFechaAsignada().mostrarFecha();
+}
+void Sala::mostrarSalaNumeroEstadoYFecha(){
+    cout<< "SALA #: "<<getnumero()<<endl;
+    if(getEstadoSala())cout<< "LA SALA ESTA ACTIVA"<<endl;
+    if(!getEstadoSala())cout<< "LA SALA ESTA EN MANTENIMIENTO"<<endl;
+    getFechaAsignada().mostrarFecha();
 }
 
 int Sala::getnumero()
