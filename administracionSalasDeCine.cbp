@@ -33,6 +33,8 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="AchivoEntrada.cpp" />
+		<Unit filename="ArchivoClientes.cpp" />
+		<Unit filename="ArchivoClientes.h" />
 		<Unit filename="ArchivoEntrada.h" />
 		<Unit filename="ArchivoPelicula.cpp" />
 		<Unit filename="ArchivoPelicula.h" />
@@ -40,6 +42,8 @@
 		<Unit filename="ArchivoRespaldo.h" />
 		<Unit filename="ArchivoSala.cpp" />
 		<Unit filename="ArchivoSala.h" />
+		<Unit filename="Clientes.cpp" />
+		<Unit filename="Clientes.h" />
 		<Unit filename="Constante.h" />
 		<Unit filename="Entrada.cpp" />
 		<Unit filename="Entrada.h" />

@@ -146,3 +146,163 @@
 	<limits>
 	"Fecha.h"
 
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\achivoentrada.cpp
+	<iostream>
+	"ArchivoEntrada.h"
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\archivoentrada.h
+	"Entrada.h"
+	<string>
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\entrada.h
+	<string>
+	<cstring>
+	"Constante.h"
+	"Fecha.h"
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\constante.h
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\fecha.h
+
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\archivopelicula.cpp
+	<iostream>
+	"ArchivoPelicula.h"
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\archivopelicula.h
+	"Pelicula.h"
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\pelicula.h
+	"Constante.h"
+	<string>
+	"Fecha.h"
+
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\archivorespaldo.cpp
+	<iostream>
+	"ArchivoRespaldo.h"
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\archivorespaldo.h
+	"Entrada.h"
+	"Pelicula.h"
+	"Sala.h"
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\sala.h
+	"Constante.h"
+	"Fecha.h"
+	<string>
+
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\archivosala.cpp
+	<iostream>
+	<string>
+	"ArchivoSala.h"
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\archivosala.h
+	"Sala.h"
+	<string>
+
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\entrada.cpp
+	<iostream>
+	"Entrada.h"
+	<string>
+	<cstring>
+
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\fecha.cpp
+	<iostream>
+	<limits>
+	"Fecha.h"
+
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\informes.cpp
+	<iostream>
+	"Informes.h"
+	"Entrada.h"
+	"Pelicula.h"
+	"Sala.h"
+	<cstring>
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\informes.h
+	"ArchivoEntrada.h"
+	"ArchivoPelicula.h"
+	"ArchivoSala.h"
+
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\main.cpp
+	<iostream>
+	<cstring>
+	"Menu.h"
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\menu.h
+	"ManagerPeliculas.h"
+	"ManagerSalas.h"
+	"ManagerEntrada.h"
+	"ManagerRespaldo.h"
+	"Informes.h"
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\managerpeliculas.h
+	"Pelicula.h"
+	"ArchivoPelicula.h"
+	<string>
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\managersalas.h
+	"Sala.h"
+	"ArchivoSala.h"
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\managerentrada.h
+	"ArchivoEntrada.h"
+
+1752440518 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\managerrespaldo.h
+	"ArchivoEntrada.h"
+	"ArchivoPelicula.H"
+	"ArchivoRespaldo.h"
+	"ArchivoSala.h"
+
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\managerentrada.cpp
+	<iostream>
+	"ManagerEntrada.h"
+	"ManagerPeliculas.h"
+	"ManagerSalas.h"
+	"Fecha.h"
+	"Constante.h"
+
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\managerpeliculas.cpp
+	<iostream>
+	"ManagerPeliculas.h"
+	<cstring>
+
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\managerrespaldo.cpp
+	<iostream>
+	"ManagerRespaldo.h"
+
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\managersalas.cpp
+	<iostream>
+	"Constante.h"
+	"ManagerSalas.h"
+	<cstring>
+
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\menu.cpp
+	<iostream>
+	"Menu.h"
+
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\pelicula.cpp
+	<iostream>
+	<cstring>
+	"Pelicula.h"
+	"ArchivoPelicula.h"
+
+1752440518 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\sala.cpp
+	<iostream>
+	"Sala.h"
+	"Constante.h"
+	<cstring>
+	"ArchivoSala.h"
+
+1752432971 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\archivoclientes.cpp
+	<iostream>
+	"ArchivoClientes.h"
+
+1752432908 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\archivoclientes.h
+	"Clientes.h"
+	<string>
+
+1752437526 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\clientes.h
+	"Constante.h"
+	<iostream>
+	"Fecha.h"
+
