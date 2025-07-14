@@ -293,7 +293,7 @@
 	<cstring>
 	"ArchivoSala.h"
 
-1752432971 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\archivoclientes.cpp
+1752495894 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\archivoclientes.cpp
 	<iostream>
 	"ArchivoClientes.h"
 
@@ -301,8 +301,16 @@
 	"Clientes.h"
 	<string>
 
-1752437526 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\clientes.h
+1752496136 c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\clientes.h
 	"Constante.h"
 	<iostream>
 	"Fecha.h"
+
+1752496112 source:c:\users\kasa1\desktop\recuperatorio\colabgithub\administrador-salas-de-cine\clientes.cpp
+	<iostream>
+	"Clientes.h"
+	"Fecha.h"
+	<cstring>
+	"Constante.h"
+	"ArchivoClientes.h"
 

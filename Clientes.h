@@ -8,7 +8,7 @@ class Clientes{
 
 public:
     Clientes();
-    Clientes(string nombreCliente, string apellidoCliente, string emailCliente, int dniCliente, int telefonoCliente, Fecha fechaDeNacimientoCliente, bool estado);
+    Clientes(string nombreCliente, string apellidoCliente, string emailCliente, int dniCliente, bool estado);
     void pasarAMinusculas(string &cadena);
 
     bool cargarCliente();
@@ -20,25 +20,20 @@ public:
     bool setApellidoCliente(string apellidoCliente);
     bool setEmailCliente(string emailCliente);
     bool setDniCliente(int dniCliente);
-    bool setTelefonoCliente(int telefonoCliente);
-    void setEstado(bool estado);
-    void setFechaNacimiento(Fecha fechaDeNacimiento);
+    bool setEstado(bool estado);
+
 
     string getNombreCliente();
     string getApellidoCliente();
     string getEmailCliente();
     int getDniCliente();
-    int getTelefonoCliente();
     bool getEstado();
-    Fecha getFechaDeNacimiento();
 
 private:
     char _nombreCliente[TAMANIOCHARMEDIO];
     char _apellidoCliente[TAMANIOCHARMEDIO];
     char _emailCliente[TAMANIOCHARMEDIO];
     int _dniCliente;
-    int _telefonoCliente;
-    Fecha _fechaDeNacimientoCliente;
     bool _estado;
 };
 

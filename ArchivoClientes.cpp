@@ -20,7 +20,7 @@ bool ArchivoClientes::guardarCliente(Clientes reg)
     fclose(pFile);
     return guardado;
 }
-
+///respaldo de clientes
 bool ArchivoClientes::guardarClientes(Clientes reg[], int cantidad)
 {
     FILE *pFile;
@@ -105,4 +105,5 @@ escrito=false;
 }
 fclose(pFile);
 return escrito;
+
 }
